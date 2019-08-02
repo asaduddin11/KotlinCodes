@@ -2,12 +2,10 @@ import kotlin.math.absoluteValue
 
 fun diagonalDifference(arr: Array<Array<Int>>): Int {
     // Write your code here
-    var one = IntArray(3)
-    var two = IntArray(3)
+    var one = IntArray(arr.size)
+    var two = IntArray(arr.size)
     for (i in 0 until arr.size){
         one.set(i, arr[i][i])
-    }
-    for(i in 0 until arr.size){
         var j = arr.size-i -1
         two.set(i, arr[i][j])
 
@@ -23,7 +21,6 @@ fun main(args: Array<String>) {
     for (i in 0 until n) {
         arr[i] = readLine()!!.trimEnd().split(" ").map{ it.toInt() }.toTypedArray()
     }
-
     val result = diagonalDifference(arr)
 
     println(result)
